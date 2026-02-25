@@ -5,4 +5,4 @@ valor = input("Digite um número: ")
 if valor == "":
     valor = None
 
-print(dobro(valor))
+print(dobro(valor))   f
