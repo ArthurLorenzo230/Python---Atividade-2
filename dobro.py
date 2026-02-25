@@ -1,8 +1,21 @@
 def dobro(x):
-    return float(x) * 2
+    try:
+        return float(x) * 2
+    except (TypeError, ValueError):
+        print(f"Erro: Não foi possível converter '{x}' para número.")
+        return None
 
-valor = input("Digite um número: ")
-if valor == "":
-    valor = None
+def main():
+    valor = input("Digite um número: ")
+    
+    if valor.strip() == "":
+        print("Erro: Entrada vazia não é permitida.")
+        return
+    
+    resultado = dobro(valor)
+    
+    if resultado is not None:
+        print(f"O dobro de {valor} é: {resultado}")
 
-print(dobro(valor))   f
+if __name__ == "__main__":
+    main()
